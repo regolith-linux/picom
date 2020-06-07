@@ -1,6 +1,11 @@
-picom (8-1~1.gbp353272) bionic; urgency=medium
+picom (8-1~1.gbp353272ubuntu1) bionic; urgency=medium
 
-  ** SNAPSHOT build @353272e4e7574a8dacca8ab5995eae21e5052c81 **
+  [ Ken Gilmer ]
+  * Remove github files from debian branch.
+
+ -- Regolith Linux <regolith.linux@gmail.com>  Sun, 07 Jun 2020 08:55:28 -0700
+
+picom (8-1~1.gbp353272) bionic; urgency=medium
 
   [ Ken Gilmer ]
   * New upstream version 8
