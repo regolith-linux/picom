@@ -55,3 +55,4 @@ doxygen/
 /tests/log
 /tests/testcases/__pycache__/
 debian/files
+builddir
