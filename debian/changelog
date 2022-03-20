@@ -1,3 +1,370 @@
+picom (9.0.0) focal; urgency=medium
+
+  [ Yuxuan Shui ]
+  * meson.build: Bump version number
+  * backend: glx: tentatively enable glFinish for NVIDIA
+  * driver: allow apply_driver_workaround to set options
+  * core: create a xsync fence always
+  * driver: enable xrender-sync-fence on NVIDIA driver
+  * backend: remove unneeded check for NVIDIA driver
+
+  [ Bernd Busse ]
+  * gl_common: set `glViewport()` to maximum supported size
+  * gl_common: Wrong viewport in `gl_average_texture_color()`
+  * gl_common: Remove superfluous calls to `glViewport`
+
+  [ Yuxuan Shui ]
+  * backend: gl_common: no need to store maximum viewport size
+
+  [ Jan Beich ]
+  * build: make Meson treat kqueue conditional as one
+
+  [ orbea ]
+  * meson: Allow building without compton compat.
+  * meson: Respect mandir.
+
+  [ Bernd Busse ]
+  * backend: gl_common: Use texture2D with filtering and clamping in blur
+  * backend: gl_common: Use linear interpolation on GPU for blur kernels.
+  * backend: xrender: use correct REPEAT mode when creating blur textures
+
+  [ zilrich ]
+  * update picom.sample.conf
+
+  [ adelin-b ]
+  * config: add shadow-hex option
+
+  [ Yuxuan Shui ]
+  * config: rename shadow-hex to shadow-color
+  * config: remove unused shadow_color variable
+  * options: support shadow-color as a commandline option
+  * render: add trapezoid helper functions
+  * x: add more picture helper functions
+  * diagnostics: improve driver printing
+  * picom-trans: fixes when setting transparency with window id
+
+  [ Bernd Busse ]
+  * c2: correctly initialize new branch for combined rule
+
+  [ Yuxuan Shui ]
+  * core: use a long-lived XFixes region
+  * Be explicit when checking XCB_NONE
+  * Add a .clang-tidy file
+  * Refresh the TODO comments
+  * core: rename _draw_callback to draw_callback_impl
+  * gitignore: ignore language server indices
+  * Remove documentation, usage messages and examples about sw-opti
+
+  [ Toni Jarjour ]
+  * picom.sample.conf: remove deprecated options
+
+  [ Bernd Busse ]
+  * backend: gl_common: support arbitrary number of aux. blur textures/fbos
+  * Add support for new blur method `dual_kawase` [WIP]
+  * backend: create dual_kawase blur parameters from selected strength [WIP]
+  * backend: gl_common: split kernel-blur code from general init/blur code [WIP]
+  * backend: gl_common: implement dual-filter kawase blur method
+
+  [ Yuxuan Shui ]
+  * Remove no-dock-shadow and no-dnd-shadow
+
+  [ Bernd Busse ]
+  * tests: add test case for #465
+  * core: update stale images AFTER checking focus
+
+  [ Ignacio Taranto ]
+  * Do not use single quotes in the example config
+
+  [ Yuxuan Shui ]
+  * Fix several memory leaks
+  * backend/backend: add a TODO about image ops ordering
+  * options: warn when dual-kawase blur is chosen on unsupported backends
+  * options: fix typo
+
+  [ Harish Rajagopal ]
+  * Changed "A X ..." to "An X ..."
+
+  [ Bernd Busse ]
+  * backend: gl_common: render correct number of elements in blur
+
+  [ jialeens ]
+  * update picom.sample.conf
+  * Accept write-pid-path option from the config file
+
+  [ Yuxuan Shui ]
+  * core: remove pid file on shutdown
+
+  [ yshui ]
+  * github: enable CodeQL workflow
+
+  [ Yuxuan Shui ]
+  * github: codeql: only install dependencies for cpp analysis
+
+  [ Bernd Busse ]
+  * log: Use thread-safe version of `localtime()`
+  * config: add wintypes option `blur-background`
+
+  [ Yuxuan Shui ]
+  * compile.h, utils.h: rename popcount
+  * diagnostics: fix missing newline
+  * core: remove a bit more of Xlib dependencies
+
+  [ nia ]
+  * Fix the build when memcpy is defined as a macro. (#501)
+
+  [ Bernd Busse ]
+  * picom-trans: Add inline `--help` output and update manpage
+  * picom-trans: add `--toggle` action to toggle between set opacity and unset.
+
+  [ Yuxuan Shui ]
+  * event: delayed handling of window property changes
+  * win: delayed handling of configure notify
+  * event: set WIN_FLAGS_FACTOR_CHANGED on tracked property change
+  * win: cache the result of fade-exclude rules
+  * event: don't eagerly add damage for configure notify
+  * event, win: delayed handling of shape notify
+  * x: remove the last bit of Xlib dependency
+
+  [ Bernd Busse ]
+  * Add testcase for #394
+  * win: clear SHADOW_STALE in destroy_win_start
+
+  [ Yuxuan Shui ]
+  * x: wid_get_text_prop shouldn't return 0 strings
+
+  [ Bernd Busse ]
+  * Fix memory errors reported by `scan-build`.
+
+  [ Yuxuan Shui ]
+  * win: don't add damage when changing shadow setting while unredirected
+  * tests: add testcase for 22162cb7e273
+  * tests: fix comments
+  * win: clear more stale flags when destroying a window
+  * README: fix typo
+  * picom: get max hostname length with sysconf()
+  * ci: build test for FreeBSD
+  * ci: freebsd: add missing dependency
+
+  [ Bernd Busse ]
+  * event: Add missing check if window is managed before setting flags
+
+  [ Omar Polo ]
+  * use the correct format control for uint64_t
+  * wrap subobject initialization with braces to silence a warning
+
+  [ Yuxuan Shui ]
+  * config_libconfig: allow overrides if supported
+  * legacy backend: render: fix leak of fbconfig
+  * core: fix leak of argb_fbconfig
+  * Fix non-opengl build
+
+  [ nia ]
+  * Cast argument to ctype functions to unsigned char
+
+  [ Yuxuan Shui ]
+  * tests: make trigger_root_configure into a 2-step process
+  * tests: don't call .check() in set_window_size
+  * win: rework how events for unmapped windows are handled
+  * testcase: add redirect_when_unmapped_window_has_shadow
+  * win: add assertion ensuring flags of unmapped windows aren't processed
+  * testcases: add a test case for #525
+  * core: always clear stale flags in destroy_backend
+  * core: don't call map_win_start in handle_new_windows
+  * core: ensure stale flags aren't set in destroy_backend
+
+  [ Samuel Hand ]
+  * options: add corner-radius
+
+  [ Yuxuan Shui ]
+  * Rounded corners for legacy xrender backend
+  * Add rounded-corners-exclude configuration option
+  * man: add note about rounded corners and transparent clipping
+  * sample config: add corner-radius and rounded-corners-exclude
+
+  [ Bernd Busse ]
+  * x: split out function to get property info (type, format, size in bytes)
+
+  [ Yuxuan Shui ]
+  * config_libconfig: drop unnecessary warning
+  * event, win: fix damage when window is moved while fading out
+  * log: strip newlines for gl string marker
+  * [general]: add more debug logs
+  * win: fix win_is_real_visible
+  * win: downgrade a debug log to trace log
+  * core: add trace log about why a window is/isn't painted
+  * win: skip fading out for window which aren't ever damaged
+  * win: fix window not being rendered when it's mapped and damged while fading out
+  * win: fix fading always skipped by unmap_win_start
+  * win: add debug logging to win_update_screen
+  * core: don't add damage in handle_new_windows
+  * win: move win_update_screen from fill_win into win_process_update_flags
+  * win: update screen after win_on_win_size_change
+
+  [ Sebastien Waegeneire ]
+  * set .desktop files to NoDisplay=true
+
+  [ yshui ]
+  * Update README.md
+
+  [ Bernd Busse ]
+  * c2: Support matching against "all" property values with special index `[*]`
+
+  [ Yuxuan Shui ]
+  * Rounded corners for legacy glx backend
+  * render: avoid left shifting negative values
+  * render: restrict painting region of glx_round_corners_dst
+
+  [ yshui ]
+  * Update README.md
+
+  [ Bernd Busse ]
+  * c2: Fix scope of predefined target in leaf-matching
+  * opengl: fix warning about unused variable
+
+  [ Yuxuan Shui ]
+  * win: sanitize _NET_FRAME_EXTENTS values
+  * diagnostic: warn the user if they are using a software GL renderer
+  * cache: add cache_set for testing
+  * x: restrict the scope of arguments taken by x_get_prop*
+  * x: remove more of session_t parameters
+  * backend: xrender: remove root_pict from _xrender_data
+
+  [ Lukas Schmelzeisen ]
+  * Add packages needed for building on Fedora to README.
+
+  [ Thiago Kenji Okada ]
+  * circleci: rename "-Dbuild_docs" -> "-Dwith_docs"
+
+  [ scrouthtv ]
+  * Minor fixes to the issue template
+
+  [ Bodhi ]
+  * Support Menu Icon
+
+  [ bhagwan ]
+  * legacy glx: extend the border into the corners when they are rounded
+
+  [ Yuxuan Shui ]
+  * legacy glx: store tex_scr location for round corner shader
+  * backend: add new API: read_pixel
+  * backend: gl_common: implement read_pixel
+
+  [ Subhaditya Nath ]
+  * picom-trans: Use POSIX-compatible sed, grep
+  * picom-trans: Use POSIX-compatible getopts
+  * picom-trans: remove a no-longer-needed workaround
+
+  [ Yuxuan Shui ]
+  * man: make it clear that --daemon can't be set from the config file
+  * picom.sample.conf: fix comment about focus-exclude
+  * backend: xrender: make backend functions static
+  * backend: xrender: implement read_pixel
+  * backend: rename copy -> clone_image
+  * backend: split image_op into image_op and set_image_property
+  * Update coding style workflow
+  * backend: remove image operation BAKE
+
+  [ Bernd Busse ]
+  * backend: glx: Fix texture access in max-brightness calculation
+  * backend: gl_common: Add descriptive checks for framebuffer-completeness
+  * backend: gl_common: Copy texture by explict rendering to framebuffer
+  * backend: xrender: Force 32-bit ARGB visual for alpha target pixmaps
+  * core: do not try to ignore xerrors before session is initialized
+  * win: use correct geometry in calculation of window frame region
+  * event: never ignore changed frame extents
+
+  [ Yuxuan Shui ]
+  * backend: remove a redundant if
+  * backend: fix NULL dereference when rendering inverted windows
+
+  [ Daniel Kwan ]
+  * Set GL_MaxFramesAllowed=1 instead of GL_YIELD=usleep
+  * Partially revert commit 0efdb6c; use glFinish only for non-NVIDIA
+
+  [ Yuxuan Shui ]
+  * backend: remove unnecessary clone_image calls
+
+  [ Bernd Busse ]
+  * Add clip-shadow-above configuration and wintype option
+
+  [ Subhaditya Nath ]
+  * Rewrite picom-trans
+  * picom-trans: Added SPDX-License-Identifier
+
+  [ Bernd Busse ]
+  * core: fix rare double-free when xinerama update fails
+  * backend: gl: do not use larger-than-screen textures for blur buffers
+
+  [ Tom Dörr ]
+  * Add build dependency Debian
+
+  [ Johnny Pribyl ]
+  * Use default `detect-client-leader` in sample conf
+
+  [ Istvan Petres ]
+  * Fixed ugly dark shadows in case of smaller window than shadow radius. (#695)
+
+  [ Yuxuan Shui ]
+  * docs: explain the detect-client-leader option better
+  * backend: add new image property: corner radius
+  * backend: gl_common: handle corner radius property
+  * options: don't disable rounded corner for new backends
+  * backend: set corner radius property
+  * backend: xrender: handle corner radius
+  * backend: xrender: cache rounded rectangle mask
+  * github: update git-clang-format-lint
+
+  [ Rafael Kitover ]
+  * Fix lack of timespec_get() on Android.
+
+  [ Tuomas Kinnunen ]
+  * allow dots (.) in condition targets
+
+  [ Yuxuan Shui ]
+  * backend: xrender: fix accidentally deleted refcount decrement
+  * backend: explicitly initialize corner_radius
+  * backend: xrender: fix clone_image
+
+  [ ktprograms ]
+  * Fix segfaults on 32bit arch with --log-level=debug
+  * Use python3 for tests
+
+  [ Bert Gijsbers ]
+  * Fix all misspellings of _NET_WM_WINDOW_OPACITY.
+  * Fix 2 examples in manpage which had obsolete options.
+
+  [ Yuxuan Shui ]
+  * backend: add new property: BORDER_COLOR
+  * backend: add new property: BORDER_WIDTH
+  * backend: gl: trivial refactoring
+  * backend: gl: draw border for rounded windows
+  * backend: gl: fix read_pixel
+  * backend: remove the read_pixel interface.
+  * Formally deprecated the sw-opti option
+  * Remove the glx-use-gpushader4 options
+  * Remove the vsync-aggressive flag
+  * Remove the glx-swap-method option
+  * Remove error messages for --dbe and --paint-on-overlay
+  * Remove error message for --alpha-step
+  * Remove error message for -d and -S
+  * Remove error message for --no-name-pixmap
+  * Remove error message for --xrender-sync
+  * Deprecate the refresh-rate options
+  * config_libconfig: reuse the deprecation message
+  * Remove error message for no-dock-shadow and no-dnd-shadow
+  * Formally deprecate --menu-opacity
+  * Report error for setting vsync to non-boolean values
+  * core: don't crash when binding root pixmap failed
+  * dbus: fix win_get with "id"
+  * dbus: properly handle object path
+  * tests: set dbus request to the right path
+  * Update CONTRIBUTORS
+
+  [ Ken Gilmer ]
+  * Fix gbp
+
+ -- Regolith Linux <regolith.linux@gmail.com>  Sun, 20 Mar 2022 16:30:30 -0700
+
 picom (8-1~1.gbp353272ubuntu1) bionic; urgency=medium
 
   [ Ken Gilmer ]
