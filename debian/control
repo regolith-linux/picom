@@ -10,6 +10,7 @@ Build-Depends:
  docbook-xsl,
  libconfig-dev,
  libdbus-1-dev,
+ libepoxy-dev,
  libev-dev,
  libevdev-dev,
  libgl1-mesa-dev,
