@@ -1,3 +1,10 @@
+picom (11.2.1) jammy; urgency=medium
+
+  * fix: prevent picom autostart for regolith compat
+  * fix: update deb branch conf
+
+ -- Regolith Linux <regolith.linux@gmail.com>  Wed, 24 Jul 2024 00:44:21 -0700
+
 picom (11.2.0) jammy; urgency=medium
 
   [ Ken Gilmer ]
