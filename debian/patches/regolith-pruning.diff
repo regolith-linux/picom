@@ -1,0 +1,33 @@
+Index: picom/meson_options.txt
+===================================================================
+--- picom.orig/meson_options.txt
++++ picom/meson_options.txt
+@@ -1,5 +1,5 @@
+ option('sanitize', type: 'boolean', value: false, description: 'Build with sanitizers enabled (deprecated)')
+-option('config_file', type: 'boolean', value: true, description: 'Enable config file support')
++option('config_file', type: 'boolean', value: false, description: 'Enable config file support')
+ option('regex', type: 'boolean', value: true, description: 'Enable regex support in window conditions')
+ 
+ option('vsync_drm', type: 'boolean', value: false, description: 'Enable support for using drm for vsync')
+@@ -9,7 +9,7 @@ option('dbus', type: 'boolean', value: t
+ 
+ option('xrescheck', type: 'boolean', value: false, description: 'Enable X resource leak checker (for debug only)')
+ 
+-option('compton', type: 'boolean', value: true, description: 'Install backwards compat with compton')
++option('compton', type: 'boolean', value: false, description: 'Install backwards compat with compton')
+ 
+ option('with_docs', type: 'boolean', value: false, description: 'Build documentation and man pages')
+ 
+Index: picom/meson.build
+===================================================================
+--- picom.orig/meson.build
++++ picom/meson.build
+@@ -73,7 +73,7 @@ subdir('man')
+ 
+ install_data('bin/picom-trans', install_dir: get_option('bindir'))
+ install_data('picom.desktop', install_dir: 'share/applications')
+-install_data('picom.desktop', install_dir: get_option('sysconfdir') / 'xdg' / 'autostart')
++# install_data('picom.desktop', install_dir: get_option('sysconfdir') / 'xdg' / 'autostart')
+ 
+ if get_option('compton')
+ 	install_data('compton.desktop', install_dir: 'share/applications')
