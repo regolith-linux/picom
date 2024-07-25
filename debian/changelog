@@ -1,3 +1,9 @@
+picom (11.2.2) jammy; urgency=medium
+
+  * fix: update patch to enable config file
+
+ -- Regolith Linux <regolith.linux@gmail.com>  Thu, 25 Jul 2024 16:51:36 -0700
+
 picom (11.2.1) jammy; urgency=medium
 
   * fix: prevent picom autostart for regolith compat
