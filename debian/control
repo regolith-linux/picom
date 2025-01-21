@@ -14,7 +14,7 @@ Build-Depends:
  libev-dev,
  libevdev-dev,
  libgl1-mesa-dev,
- libpcre3-dev,
+ libpcre2-dev,
  libpixman-1-dev,
  libx11-xcb-dev,
  libxcb-composite0-dev,
