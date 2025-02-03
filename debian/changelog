@@ -1,3 +1,15 @@
+picom (11.2.3) jammy; urgency=medium
+
+  [ Khosrow Moossavi ]
+  * feat: use newer version of libpcre which is 2 not 3!
+  * feat: enable github action to test pull requests
+  * feat: enable github action to publish to unstable
+  * feat: enable github action to publish to testing
+  * feat: enable github action to prepare release
+  * fix: create release tag from correct git sha
+
+ -- Regolith Linux <regolith.linux@gmail.com>  Mon, 03 Feb 2025 21:33:45 +0000
+
 picom (11.2.2) jammy; urgency=medium
 
   * fix: update patch to enable config file
