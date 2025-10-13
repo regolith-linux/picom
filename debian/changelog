@@ -1,3 +1,10 @@
+picom (11.2.4) jammy; urgency=medium
+
+  [ Khosrow Moossavi ]
+  * feat: use build-only to test pull request
+
+ -- Regolith Linux <regolith.linux@gmail.com>  Mon, 13 Oct 2025 18:27:42 +0000
+
 picom (11.2.3) jammy; urgency=medium
 
   [ Khosrow Moossavi ]
